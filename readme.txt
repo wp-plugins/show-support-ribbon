@@ -14,7 +14,7 @@ Stable tag: 20121104
 License: GPLv2 or later
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
 
-[Show Support Ribbon](http://perishablepress.com/show-support-ribbon/) displays a customizable "show support" ribbon, banner, or badge on your site.
+Show Support Ribbon displays a customizable "show support" ribbon, banner, or badge on your site.
 
 == Description ==
 
