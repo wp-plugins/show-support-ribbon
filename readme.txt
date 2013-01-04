@@ -8,9 +8,9 @@ Author URI: http://monzilla.biz/
 Contributors: specialk
 Donate link: http://digwp.com/book/
 Requires at least: 3.3
-Tested up to: 3.4.2
-Version: 20121104
-Stable tag: 20121104
+Tested up to: 3.5
+Version: 20130103
+Stable tag: 20130103
 License: GPLv2 or later
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
 
@@ -46,6 +46,11 @@ To upgrade, simply upload the new version and you should be good to go.
 Screenshots available at the [SSR Homepage](http://perishablepress.com/show-support-ribbon/).
 
 == Changelog ==
+
+**20130103**
+
+* Added margins to submit button (now required in WP 3.5)
+* Added option to open ribbon-link in new tab or same tab
 
 **20121104**
 

@@ -5,7 +5,7 @@ Plugin URI: http://perishablepress.com/show-support-ribbon/
 Description: Simple plugin to display a custom support ribbon on your site.
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
-Version: 20121104
+Version: 20130103
 License: GPL v2
 Usage: Visit the plugin's settings page for shortcodes, template tags, and more information.
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
@@ -17,7 +17,7 @@ $ssr_plugin  = __('Show Support Ribbon');
 $ssr_options = get_option('ssr_options');
 $ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
 $ssr_homeurl = 'http://perishablepress.com/show-support-ribbon/';
-$ssr_version = '20121104';
+$ssr_version = '20130103';
 
 // require minimum version of WordPress
 add_action('admin_init', 'ssr_require_wp_version');
@@ -42,6 +42,7 @@ function ssr_display_ribbon() {
 	$href   = $ssr_options['ssr_href'];
 	$title  = $ssr_options['ssr_title'];
 	$link   = $ssr_options['ssr_link'];
+	$blank  = $ssr_options['ssr_blank'];
 
 	if ($enable == true) {
 		if ($style == 'ssr_badge') {
@@ -64,7 +65,11 @@ function ssr_display_ribbon() {
 			$css_div  = $ssr_options['ssr_outer'];
 			$css_link = $ssr_options['ssr_inner'];
 		}
-		return "\n" . '<div id="show-support-ribbon" style="' . $css_div . '"><a href="' . $href . '" title="' . $title . '" style="' . $css_link . '" target="_blank">' . $link . '</a><div>' . "\n\n";
+		if ($blank == true) {
+			return "\n" . '<div id="show-support-ribbon" style="' . $css_div . '"><a href="' . $href . '" title="' . $title . '" style="' . $css_link . '" target="_blank">' . $link . '</a><div>' . "\n\n";
+		} else {
+			return "\n" . '<div id="show-support-ribbon" style="' . $css_div . '"><a href="' . $href . '" title="' . $title . '" style="' . $css_link . '">' . $link . '</a><div>' . "\n\n";
+		}
 	}
 }
 
@@ -118,6 +123,7 @@ function ssr_add_defaults() {
 			'ssr_href'        => 'http://example.com/',
 			'ssr_title'       => 'Your event here!',
 			'ssr_link'        => 'Show Support!',
+			'ssr_blank'       => 1,
 		);
 		update_option('ssr_options', $arr);
 	}
@@ -162,6 +168,9 @@ function ssr_validate_options($input) {
 
 	if (!isset($input['ssr_enable'])) $input['ssr_enable'] = null;
 	$input['ssr_enable'] = ($input['ssr_enable'] == '1' ? '1' : '0');
+
+	if (!isset($input['ssr_blank'])) $input['ssr_blank'] = null;
+	$input['ssr_blank'] = ($input['ssr_blank'] == '1' ? '1' : '0');
 
 	if (!isset($input['ssr_style'])) $input['ssr_style'] = null;
 	if (!array_key_exists($input['ssr_style'], $ssr_display_styles)) $input['ssr_style'] = null;
@@ -211,7 +220,7 @@ function ssr_render_form() {
 
 		#setting-error-settings_updated { margin: 10px 0; }
 		#setting-error-settings_updated p { margin: 5px; }
-		.button-primary { margin: 0 0 15px 15px; }
+		#mm-plugin-options .button-primary { margin: 0 0 15px 15px; }
 
 		#mm-panel-tertiary pre { margin: 10px 0 20px 30px; line-height: 18px; }
 		#mm-panel-tertiary hr { width: 97%; margin-bottom: 25px; }
@@ -266,6 +275,11 @@ function ssr_render_form() {
 										<th scope="row"><label class="description" for="ssr_options[ssr_enable]"><?php _e('Display the ribbon?'); ?></label></th>
 										<td><input type="checkbox" name="ssr_options[ssr_enable]" value="1" <?php if (isset($ssr_options['ssr_enable'])) { checked('1', $ssr_options['ssr_enable']); } ?> /> 
 										<?php _e('Check the box to display the ribbon on your site.'); ?></td>
+									</tr>
+									<tr>
+										<th scope="row"><label class="description" for="ssr_options[ssr_blank]"><?php _e('Open ribbon link in new tab?'); ?></label></th>
+										<td><input type="checkbox" name="ssr_options[ssr_blank]" value="1" <?php if (isset($ssr_options['ssr_blank'])) { checked('1', $ssr_options['ssr_blank']); } ?> /> 
+										<?php _e('Check the box to open the ribbon link in a new tab. Or, leave unchecked to open in same tab.'); ?></td>
 									</tr>
 									<tr>
 										<th scope="row"><label class="description" for="ssr_options[ssr_style]"><?php _e('Select your style'); ?></label></th>
