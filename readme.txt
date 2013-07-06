@@ -6,11 +6,11 @@ Description: Displays a customizable "show support" ribbon, banner, or badge on 
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Contributors: specialk
-Donate link: http://digwp.com/book/
+Donate link: http://m0n.co/donate
 Requires at least: 3.3
 Tested up to: 3.5
-Version: 20130103
-Stable tag: 20130103
+Version: 20130705
+Stable tag: 20130705
 License: GPLv2 or later
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
 
@@ -47,6 +47,12 @@ Screenshots available at the [SSR Homepage](http://perishablepress.com/show-supp
 
 == Changelog ==
 
+**20130705**
+
+* Improved preset CSS (upped the z-index)
+* General code check n clean
+* Overview and Updates admin panels toggled open by default
+
 **20130103**
 
 * Added margins to submit button (now required in WP 3.5)
@@ -70,6 +76,6 @@ To ask a question, visit the [SSR Homepage](http://perishablepress.com/show-supp
 
 == Donations ==
 
-I created this plugin with love for the WP community. To show support, consider purchasing my new book, [.htaccess made easy](http://htaccessbook.com/), or my WordPress book, [Digging into WordPress](http://digwp.com/).
+I created this plugin with love for the WP community. To show support, consider purchasing one of my books: [The Tao of WordPress](http://wp-tao.com/), [Digging into WordPress](http://digwp.com/), or [.htaccess made easy](http://htaccessbook.com/).
 
 Links, tweets and likes also appreciated. Thanks! :)
