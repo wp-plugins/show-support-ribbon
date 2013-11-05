@@ -6,7 +6,7 @@ Description: Simple plugin to display a custom support ribbon on your site.
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Donate link: http://m0n.co/donate
-Version: 20130705
+Version: 20131104
 License: GPL v2
 Usage: Visit the plugin's settings page for shortcodes, template tags, and more information.
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
@@ -14,11 +14,13 @@ Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, o
 
 // NO EDITING REQUIRED - PLEASE SET PREFERENCES IN THE WP ADMIN!
 
+if (!defined('ABSPATH')) die();
+
 $ssr_plugin  = __('Show Support Ribbon', 'ssr');
 $ssr_options = get_option('ssr_options');
 $ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
 $ssr_homeurl = 'http://perishablepress.com/show-support-ribbon/';
-$ssr_version = '20130705';
+$ssr_version = '20131104';
 
 // require minimum version of WordPress
 add_action('admin_init', 'ssr_require_wp_version');
@@ -542,4 +544,4 @@ box-shadow:1px 1px 3px 0 rgba(0,0,0,0.3);</pre>
 		});
 	</script>
 
-<?php } ?>
+<?php }

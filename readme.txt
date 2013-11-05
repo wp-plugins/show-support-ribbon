@@ -8,9 +8,9 @@ Author URI: http://monzilla.biz/
 Contributors: specialk
 Donate link: http://m0n.co/donate
 Requires at least: 3.3
-Tested up to: 3.5
-Version: 20130705
-Stable tag: 20130705
+Tested up to: 3.7.1
+Version: 20131104
+Stable tag: trunk
 License: GPLv2 or later
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
 
@@ -47,6 +47,12 @@ Screenshots available at the [SSR Homepage](http://perishablepress.com/show-supp
 
 == Changelog ==
 
+**20131104**
+
+* Added line to prevent direct loading of script
+* Removed closing "?>" from show-support-ribbon.php
+* Tested with latest version of WordPress (3.7)
+
 **20130705**
 
 * Improved preset CSS (upped the z-index)
@@ -71,6 +77,14 @@ Screenshots available at the [SSR Homepage](http://perishablepress.com/show-supp
 * Initial release.
 
 == Frequently Asked Questions ==
+
+Question: Where do I place the image for the button? How do I include a graphic for the button?
+
+Answer: Images may be displayed using CSS. Upload the desired file and then display it using CSS, like so:
+
+`background-image { url(/path/to/image.png) fixed no-repeat center top; }`
+
+Fine-tune as needed to dial it in. To add via plugin settings, select "Custom" for the "Select your style" option and include for either `<div>` or `<a>` styles.
 
 To ask a question, visit the [SSR Homepage](http://perishablepress.com/show-support-ribbon/) or [contact me](http://perishablepress.com/contact/).
 
