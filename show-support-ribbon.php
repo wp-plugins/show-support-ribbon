@@ -6,7 +6,7 @@ Description: Simple plugin to display a custom support ribbon on your site.
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Donate link: http://m0n.co/donate
-Version: 20131104
+Version: 20131107
 License: GPL v2
 Usage: Visit the plugin's settings page for shortcodes, template tags, and more information.
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
@@ -16,11 +16,17 @@ Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, o
 
 if (!defined('ABSPATH')) die();
 
+// i18n
+function ssr_i18n_init() {
+	load_plugin_textdomain('ssr', false, dirname(plugin_basename(__FILE__)) . '/languages');
+}
+add_action('plugins_loaded', 'ssr_i18n_init');
+
 $ssr_plugin  = __('Show Support Ribbon', 'ssr');
 $ssr_options = get_option('ssr_options');
 $ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
 $ssr_homeurl = 'http://perishablepress.com/show-support-ribbon/';
-$ssr_version = '20131104';
+$ssr_version = '20131107';
 
 // require minimum version of WordPress
 add_action('admin_init', 'ssr_require_wp_version');
@@ -103,6 +109,16 @@ function ssr_plugin_action_links($links, $file) {
 	}
 	return $links;
 }
+
+// rate plugin link
+function add_ssr_links($links, $file) {
+	if ($file == plugin_basename(__FILE__)) {
+		$rate_url = 'http://wordpress.org/support/view/plugin-reviews/' . basename(dirname(__FILE__)) . '?rate=5#postform';
+		$links[] = '<a href="' . $rate_url . '" target="_blank" title="Click here to rate and review this plugin on WordPress.org">Rate this plugin</a>';
+	}
+	return $links;
+}
+add_filter('plugin_row_meta', 'add_ssr_links', 10, 2);
 
 // delete plugin settings
 function ssr_delete_plugin_options() {
@@ -264,6 +280,11 @@ function ssr_render_form() {
 									<li><?php _e('For shortcodes and template tags, visit', 'ssr'); ?> <a id="mm-panel-secondary-link" href="#mm-panel-secondary"><?php _e('Shortcodes &amp; Template Tags', 'ssr'); ?></a>.</li>
 									<li><?php _e('For some alternate CSS styles, visit', 'ssr'); ?> <a id="mm-panel-tertiary-link" href="#mm-panel-tertiary"><?php _e('Customization Tips', 'ssr'); ?></a>.</li>
 									<li><?php _e('For more information check the <code>readme.txt</code> and', 'ssr'); ?> <a href="<?php echo $ssr_homeurl; ?>"><?php _e('SSR Homepage', 'ssr'); ?></a>.</li>
+									<li><?php _e('If you like this plugin, please', 'ssr'); ?> 
+										<a href="http://wordpress.org/support/view/plugin-reviews/<?php echo basename(dirname(__FILE__)); ?>?rate=5#postform" title="<?php _e('Click here to rate and review this plugin on WordPress.org', 'ssr'); ?>" target="_blank">
+											<?php _e('rate it at the Plugin Directory', 'ssr'); ?>&nbsp;&raquo;
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>

@@ -9,7 +9,7 @@ Contributors: specialk
 Donate link: http://m0n.co/donate
 Requires at least: 3.3
 Tested up to: 3.7.1
-Version: 20131104
+Version: 20131107
 Stable tag: trunk
 License: GPLv2 or later
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
@@ -46,6 +46,12 @@ To upgrade, simply upload the new version and you should be good to go.
 Screenshots available at the [SSR Homepage](http://perishablepress.com/show-support-ribbon/).
 
 == Changelog ==
+
+**20131107**
+
+* Added uninstall.php file
+* Added "rate this plugin" links
+* Added i18n support
 
 **20131104**
 
