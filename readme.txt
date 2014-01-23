@@ -8,8 +8,8 @@ Author URI: http://monzilla.biz/
 Contributors: specialk
 Donate link: http://m0n.co/donate
 Requires at least: 3.3
-Tested up to: 3.7.1
-Version: 20131107
+Tested up to: 3.8
+Version: 20140123
 Stable tag: trunk
 License: GPLv2 or later
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
@@ -46,6 +46,11 @@ To upgrade, simply upload the new version and you should be good to go.
 Screenshots available at the [SSR Homepage](http://perishablepress.com/show-support-ribbon/).
 
 == Changelog ==
+
+**20140123**
+
+* Tested with latest WordPress (3.8)
+* Added trailing slash to load_plugin_textdomain()
 
 **20131107**
 
