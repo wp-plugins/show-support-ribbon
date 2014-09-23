@@ -6,7 +6,7 @@ Description: Simple plugin to display a custom support ribbon on your site.
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Donate link: http://m0n.co/donate
-Version: 20140123
+Version: 20140923
 License: GPL v2
 Usage: Visit the plugin's settings page for shortcodes, template tags, and more information.
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
@@ -26,20 +26,22 @@ $ssr_plugin  = __('Show Support Ribbon', 'ssr');
 $ssr_options = get_option('ssr_options');
 $ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
 $ssr_homeurl = 'http://perishablepress.com/show-support-ribbon/';
-$ssr_version = '20140123';
+$ssr_version = '20140923';
 
 // require minimum version of WordPress
-add_action('admin_init', 'ssr_require_wp_version');
 function ssr_require_wp_version() {
 	global $wp_version, $ssr_path, $ssr_plugin;
-	if (version_compare($wp_version, '3.4', '<')) {
+	if (version_compare($wp_version, '3.7', '<')) {
 		if (is_plugin_active($ssr_path)) {
 			deactivate_plugins($ssr_path);
-			$msg =  '<strong>' . $ssr_plugin . '</strong> ' . __('requires WordPress 3.4 or higher, and has been deactivated!', 'ssr') . '<br />';
+			$msg =  '<strong>' . $ssr_plugin . '</strong> ' . __('requires WordPress 3.7 or higher, and has been deactivated!', 'ssr') . '<br />';
 			$msg .= __('Please return to the', 'ssr') . ' <a href="' . admin_url() . '">' . __('WordPress Admin area', 'ssr') . '</a> ' . __('to upgrade WordPress and try again.', 'ssr');
 			wp_die($msg);
 		}
 	}
+}
+if (isset($_GET['activate']) && $_GET['activate'] == 'true') {
+	add_action('admin_init', 'ssr_require_wp_version');
 }
 
 // display the ribbon
