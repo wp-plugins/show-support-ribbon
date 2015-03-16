@@ -1,40 +1,42 @@
 <?php 
 /*
-Plugin Name: Show Support Ribbon
-Plugin URI: http://perishablepress.com/show-support-ribbon/
-Description: Simple plugin to display a custom support ribbon on your site.
-Author: Jeff Starr
-Author URI: http://monzilla.biz/
-Donate link: http://m0n.co/donate
-Version: 20140923
-License: GPL v2
-Usage: Visit the plugin's settings page for shortcodes, template tags, and more information.
-Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
+	Plugin Name: Show Support Ribbon
+	Plugin URI: http://perishablepress.com/show-support-ribbon/
+	Description: Displays a customizable "show support" ribbon, banner, or badge on your site.
+	Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
+	Author: Jeff Starr
+	Author URI: http://monzilla.biz/
+	Donate link: http://m0n.co/donate
+	Contributors: specialk
+	Requires at least: 3.8
+	Tested up to: 4.1
+	Stable tag: trunk
+	Version: 20150315
+	Text Domain: ssr
+	Domain Path: /languages/
+	License: GPL v2 or later
 */
-
-// NO EDITING REQUIRED - PLEASE SET PREFERENCES IN THE WP ADMIN!
 
 if (!defined('ABSPATH')) die();
 
-// i18n
+$ssr_wp_vers = '3.8';
+$ssr_version = '20150315';
+$ssr_plugin  = __('Show Support Ribbon', 'ssr');
+$ssr_options = get_option('ssr_options');
+$ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
+$ssr_homeurl = 'http://perishablepress.com/show-support-ribbon/';
+
 function ssr_i18n_init() {
 	load_plugin_textdomain('ssr', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 add_action('plugins_loaded', 'ssr_i18n_init');
 
-$ssr_plugin  = __('Show Support Ribbon', 'ssr');
-$ssr_options = get_option('ssr_options');
-$ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
-$ssr_homeurl = 'http://perishablepress.com/show-support-ribbon/';
-$ssr_version = '20140923';
-
-// require minimum version of WordPress
 function ssr_require_wp_version() {
-	global $wp_version, $ssr_path, $ssr_plugin;
-	if (version_compare($wp_version, '3.7', '<')) {
+	global $wp_version, $ssr_path, $ssr_plugin, $ssr_wp_vers;
+	if (version_compare($wp_version, $ssr_wp_vers, '<')) {
 		if (is_plugin_active($ssr_path)) {
 			deactivate_plugins($ssr_path);
-			$msg =  '<strong>' . $ssr_plugin . '</strong> ' . __('requires WordPress 3.7 or higher, and has been deactivated!', 'ssr') . '<br />';
+			$msg =  '<strong>' . $ssr_plugin . '</strong> ' . __('requires WordPress ', 'ssr') . $ssr_wp_vers . __(' or higher, and has been deactivated!', 'ssr') . '<br />';
 			$msg .= __('Please return to the', 'ssr') . ' <a href="' . admin_url() . '">' . __('WordPress Admin area', 'ssr') . '</a> ' . __('to upgrade WordPress and try again.', 'ssr');
 			wp_die($msg);
 		}
@@ -44,7 +46,6 @@ if (isset($_GET['activate']) && $_GET['activate'] == 'true') {
 	add_action('admin_init', 'ssr_require_wp_version');
 }
 
-// display the ribbon
 function ssr_display_ribbon() { 
 	global $ssr_options;
 
@@ -84,25 +85,20 @@ function ssr_display_ribbon() {
 	}
 }
 
-// enable display ribbon in footer
-add_action('wp_footer', 'ssr_enable_display_ribbon');
 function ssr_enable_display_ribbon() {
 	echo ssr_display_ribbon();
 }
+add_action('wp_footer', 'ssr_enable_display_ribbon');
 
-// shortcode to display ribbon: [show_support_ribbon]
-add_shortcode('show_support_ribbon','ssr_shortcode');
 function ssr_shortcode() {
 	return ssr_display_ribbon();
 }
+add_shortcode('show_support_ribbon','ssr_shortcode');
 
-// template tag to display ribbon: show_support_ribbon()
 function show_support_ribbon() {
 	echo ssr_display_ribbon();
 }
 
-// display settings link on plugin page
-add_filter ('plugin_action_links', 'ssr_plugin_action_links', 10, 2);
 function ssr_plugin_action_links($links, $file) {
 	global $ssr_path;
 	if ($file == $ssr_path) {
@@ -111,8 +107,8 @@ function ssr_plugin_action_links($links, $file) {
 	}
 	return $links;
 }
+add_filter ('plugin_action_links', 'ssr_plugin_action_links', 10, 2);
 
-// rate plugin link
 function add_ssr_links($links, $file) {
 	if ($file == plugin_basename(__FILE__)) {
 		$rate_url = 'http://wordpress.org/support/view/plugin-reviews/' . basename(dirname(__FILE__)) . '?rate=5#postform';
@@ -122,7 +118,6 @@ function add_ssr_links($links, $file) {
 }
 add_filter('plugin_row_meta', 'add_ssr_links', 10, 2);
 
-// delete plugin settings
 function ssr_delete_plugin_options() {
 	delete_option('ssr_options');
 }
@@ -130,8 +125,6 @@ if ($ssr_options['default_options'] == 1) {
 	register_uninstall_hook (__FILE__, 'ssr_delete_plugin_options');
 }
 
-// define default settings
-register_activation_hook (__FILE__, 'ssr_add_defaults');
 function ssr_add_defaults() {
 	$tmp = get_option('ssr_options');
 	if(($tmp['default_options'] == '1') || (!is_array($tmp))) {
@@ -149,8 +142,8 @@ function ssr_add_defaults() {
 		update_option('ssr_options', $arr);
 	}
 }
+register_activation_hook (__FILE__, 'ssr_add_defaults');
 
-// define style options
 $ssr_display_styles = array(
 	'ssr_badge'  => array(
 		'value' => 'ssr_badge',
@@ -174,13 +167,11 @@ $ssr_display_styles = array(
 	)
 );
 
-// whitelist settings
-add_action ('admin_init', 'ssr_init');
 function ssr_init() {
 	register_setting('ssr_plugin_options', 'ssr_options', 'ssr_validate_options');
 }
+add_action ('admin_init', 'ssr_init');
 
-// sanitize and validate input
 function ssr_validate_options($input) {
 	global $ssr_display_styles;
 
@@ -205,14 +196,12 @@ function ssr_validate_options($input) {
 	return $input;
 }
 
-// add the options page
-add_action ('admin_menu', 'ssr_add_options_page');
 function ssr_add_options_page() {
 	global $ssr_plugin;
 	add_options_page($ssr_plugin, $ssr_plugin, 'manage_options', __FILE__, 'ssr_render_form');
 }
+add_action ('admin_menu', 'ssr_add_options_page');
 
-// create the options page
 function ssr_render_form() {
 	global $ssr_plugin, $ssr_options, $ssr_path, $ssr_homeurl, $ssr_version, $ssr_display_styles; ?>
 
@@ -258,8 +247,6 @@ function ssr_render_form() {
 	</style>
 
 	<div id="mm-plugin-options" class="wrap">
-		<?php screen_icon(); ?>
-
 		<h2><?php echo $ssr_plugin; ?> <small><?php echo 'v' . $ssr_version; ?></small></h2>
 		<div id="mm-panel-toggle"><a href="<?php get_admin_url() . 'options-general.php?page=' . $ssr_path; ?>"><?php _e('Toggle all panels', 'ssr'); ?></a></div>
 
@@ -281,9 +268,11 @@ function ssr_render_form() {
 									<li><?php _e('To configure SSR, visit the', 'ssr'); ?> <a id="mm-panel-primary-link" href="#mm-panel-primary"><?php _e('Options panel', 'ssr'); ?></a>.</li>
 									<li><?php _e('For shortcodes and template tags, visit', 'ssr'); ?> <a id="mm-panel-secondary-link" href="#mm-panel-secondary"><?php _e('Shortcodes &amp; Template Tags', 'ssr'); ?></a>.</li>
 									<li><?php _e('For some alternate CSS styles, visit', 'ssr'); ?> <a id="mm-panel-tertiary-link" href="#mm-panel-tertiary"><?php _e('Customization Tips', 'ssr'); ?></a>.</li>
-									<li><?php _e('For more information check the <code>readme.txt</code> and', 'ssr'); ?> <a href="<?php echo $ssr_homeurl; ?>"><?php _e('SSR Homepage', 'ssr'); ?></a>.</li>
+									<li>
+										<?php _e('For more information check the', 'ssr'); ?> <a target="_blank" href="<?php echo plugins_url('/show-support-ribbon/readme.txt', dirname(__FILE__)); ?>">readme.txt</a> 
+										<?php _e('and', 'ssr'); ?> <a target="_blank" href="<?php echo $ssr_homeurl; ?>"><?php _e('SSR Homepage', 'ssr'); ?></a>.</li>
 									<li><?php _e('If you like this plugin, please', 'ssr'); ?> 
-										<a href="http://wordpress.org/support/view/plugin-reviews/<?php echo basename(dirname(__FILE__)); ?>?rate=5#postform" title="<?php _e('Click here to rate and review this plugin on WordPress.org', 'ssr'); ?>" target="_blank">
+										<a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/<?php echo basename(dirname(__FILE__)); ?>?rate=5#postform" title="<?php _e('Click here to rate and review this plugin on WordPress.org', 'ssr'); ?>">
 											<?php _e('rate it at the Plugin Directory', 'ssr'); ?>&nbsp;&raquo;
 										</a>
 									</li>

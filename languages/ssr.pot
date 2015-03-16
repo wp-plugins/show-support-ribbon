@@ -1,0 +1,258 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Show Support Ribbon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Sun Mar 15 2015 21:46:22 GMT-0700 (PDT)\n"
+"POT-Revision-Date: Sun Mar 15 2015 21:46:25 GMT-0700 (PDT)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../show-support-ribbon.php:24
+msgid "Show Support Ribbon"
+msgstr ""
+
+#: ../show-support-ribbon.php:39
+msgid "requires WordPress "
+msgstr ""
+
+#: ../show-support-ribbon.php:39
+msgid " or higher, and has been deactivated!"
+msgstr ""
+
+#: ../show-support-ribbon.php:40
+msgid "Please return to the"
+msgstr ""
+
+#: ../show-support-ribbon.php:40
+msgid "WordPress Admin area"
+msgstr ""
+
+#: ../show-support-ribbon.php:40
+msgid "to upgrade WordPress and try again."
+msgstr ""
+
+#: ../show-support-ribbon.php:105
+msgid "Settings"
+msgstr ""
+
+#: ../show-support-ribbon.php:251
+msgid "Toggle all panels"
+msgstr ""
+
+#: ../show-support-ribbon.php:259
+msgid "Overview"
+msgstr ""
+
+#: ../show-support-ribbon.php:263
+msgid ""
+"(SSR) displays a custom support ribbon on your site. SSR includes four built-"
+"in display styles: badge, banner, ribbon, or link."
+msgstr ""
+
+#: ../show-support-ribbon.php:264
+msgid ""
+"SSR also includes the option to use your own custom CSS to style the ribbon "
+"and position it anywhere on the page. See the \"Customization Tips\" panel for "
+"more information."
+msgstr ""
+
+#: ../show-support-ribbon.php:265
+msgid ""
+"Optionally you may use the shortcode to display the ribbon on any post or "
+"page, or use the template tag to display the ribbon anywhere in your theme "
+"template."
+msgstr ""
+
+#: ../show-support-ribbon.php:268
+msgid "To configure SSR, visit the"
+msgstr ""
+
+#: ../show-support-ribbon.php:268
+msgid "Options panel"
+msgstr ""
+
+#: ../show-support-ribbon.php:269
+msgid "For shortcodes and template tags, visit"
+msgstr ""
+
+#: ../show-support-ribbon.php:269
+msgid "Shortcodes &amp; Template Tags"
+msgstr ""
+
+#: ../show-support-ribbon.php:270
+msgid "For some alternate CSS styles, visit"
+msgstr ""
+
+#: ../show-support-ribbon.php:270 ../show-support-ribbon.php:371
+msgid "Customization Tips"
+msgstr ""
+
+#: ../show-support-ribbon.php:271
+msgid "For more information check the <code>readme.txt</code> and"
+msgstr ""
+
+#: ../show-support-ribbon.php:271
+msgid "SSR Homepage"
+msgstr ""
+
+#: ../show-support-ribbon.php:272
+msgid "If you like this plugin, please"
+msgstr ""
+
+#: ../show-support-ribbon.php:273
+msgid "Click here to rate and review this plugin on WordPress.org"
+msgstr ""
+
+#: ../show-support-ribbon.php:274
+msgid "rate it at the Plugin Directory"
+msgstr ""
+
+#: ../show-support-ribbon.php:282
+msgid "Options"
+msgstr ""
+
+#: ../show-support-ribbon.php:284
+msgid "Choose your options.."
+msgstr ""
+
+#: ../show-support-ribbon.php:288
+msgid "Display the ribbon?"
+msgstr ""
+
+#: ../show-support-ribbon.php:290
+msgid "Check the box to display the ribbon on your site."
+msgstr ""
+
+#: ../show-support-ribbon.php:293
+msgid "Open ribbon link in new tab?"
+msgstr ""
+
+#: ../show-support-ribbon.php:295
+msgid ""
+"Check the box to open the ribbon link in a new tab. Or, leave unchecked to "
+"open in same tab."
+msgstr ""
+
+#: ../show-support-ribbon.php:298
+msgid "Select your style"
+msgstr ""
+
+#: ../show-support-ribbon.php:318
+msgid "HTML"
+msgstr ""
+
+#: ../show-support-ribbon.php:320
+msgid ""
+"<abbr title=\"For Your Information\">FYI</abbr>: here is the markup that is "
+"used to create the ribbon:"
+msgstr ""
+
+#: ../show-support-ribbon.php:327
+msgid "<code>&lt;div&gt;</code> styles"
+msgstr ""
+
+#: ../show-support-ribbon.php:329
+msgid "Enter some CSS for the <code>&lt;div&gt;</code> tag."
+msgstr ""
+
+#: ../show-support-ribbon.php:332
+msgid "<code>&lt;a&gt;</code> styles"
+msgstr ""
+
+#: ../show-support-ribbon.php:334
+msgid "Enter some CSS for the <code>&lt;a&gt;</code> tag."
+msgstr ""
+
+#: ../show-support-ribbon.php:337
+msgid "Link URL"
+msgstr ""
+
+#: ../show-support-ribbon.php:339
+msgid "Enter the URL that should be used for the ribbon link."
+msgstr ""
+
+#: ../show-support-ribbon.php:342
+msgid "Link title"
+msgstr ""
+
+#: ../show-support-ribbon.php:344
+msgid "Enter the title that should be used for the ribbon link."
+msgstr ""
+
+#: ../show-support-ribbon.php:347
+msgid "Link text"
+msgstr ""
+
+#: ../show-support-ribbon.php:349
+msgid "Enter the anchor text that should be used for the ribbon link."
+msgstr ""
+
+#: ../show-support-ribbon.php:353 ../show-support-ribbon.php:484
+msgid "Save Settings"
+msgstr ""
+
+#: ../show-support-ribbon.php:357
+msgid "Shortcode &amp; Template Tag"
+msgstr ""
+
+#: ../show-support-ribbon.php:360
+msgid "Shortcode"
+msgstr ""
+
+#: ../show-support-ribbon.php:361
+msgid "Display the ribbon on any post or page:"
+msgstr ""
+
+#: ../show-support-ribbon.php:364
+msgid "Template tag"
+msgstr ""
+
+#: ../show-support-ribbon.php:365
+msgid "Display the ribbon anywhere in your theme:"
+msgstr ""
+
+#: ../show-support-ribbon.php:373
+msgid "For those new to styling HTML with CSS, here are some recipes and tips."
+msgstr ""
+
+#: ../show-support-ribbon.php:473
+msgid "Restore Default Options"
+msgstr ""
+
+#: ../show-support-ribbon.php:477
+msgid "Restore default options upon plugin deactivation/reactivation."
+msgstr ""
+
+#: ../show-support-ribbon.php:481
+msgid ""
+"<strong>Tip:</strong> leave this option unchecked to remember your settings. "
+"Or, to go ahead and restore all default options, check the box, save your "
+"settings, and then deactivate/reactivate the plugin."
+msgstr ""
+
+#: ../show-support-ribbon.php:488
+msgid "Updates &amp; Info"
+msgstr ""
+
+#: ../show-support-ribbon.php:533
+msgid ""
+"Are you sure you want to restore all default options? (this action cannot be "
+"undone)"
+msgstr ""

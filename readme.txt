@@ -3,16 +3,18 @@
 Plugin Name: Show Support Ribbon
 Plugin URI: http://perishablepress.com/show-support-ribbon/
 Description: Displays a customizable "show support" ribbon, banner, or badge on your site.
+Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
-Contributors: specialk
 Donate link: http://m0n.co/donate
-Requires at least: 3.7
-Tested up to: 4.0
-Version: 20140923
+Contributors: specialk
+Requires at least: 3.8
+Tested up to: 4.1
 Stable tag: trunk
-License: GPLv2 or later
-Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
+Version: 20150315
+Text Domain: ssr
+Domain Path: /languages/
+License: GPL v2 or later
 
 Show Support Ribbon displays a customizable "show support" ribbon, banner, or badge on your site.
 
@@ -46,6 +48,16 @@ To upgrade, simply upload the new version and you should be good to go.
 Screenshots available at the [SSR Homepage](http://perishablepress.com/show-support-ribbon/).
 
 == Changelog ==
+
+**20150315**
+
+* Tested with latest version of WP (4.1)
+* Increased minimum version to WP 3.8
+* Removed deprecated screen_icon()
+* Added $ssr_wp_vers for version check
+* Streamline/fine-tune plugin code
+* Added Text Domain and Domain Path to file header
+* Added translation .pot template in /languages/
 
 **20140923**
 
@@ -107,6 +119,11 @@ To ask a question, visit the [SSR Homepage](http://perishablepress.com/show-supp
 
 == Donations ==
 
-I created this plugin with love for the WP community. To show support, consider purchasing one of my books: [The Tao of WordPress](http://wp-tao.com/), [Digging into WordPress](http://digwp.com/), or [.htaccess made easy](http://htaccessbook.com/).
+I created this plugin with love for the WP community. To show support, you can [make a donation](http://m0n.co/donate) or purchase one of my books: 
+
+* [The Tao of WordPress](http://wp-tao.com/)
+* [Digging into WordPress](http://digwp.com/)
+* [.htaccess made easy](http://htaccessbook.com/)
+* [WordPress Themes In Depth](http://wp-tao.com/wordpress-themes-book/)
 
 Links, tweets and likes also appreciated. Thanks! :)
