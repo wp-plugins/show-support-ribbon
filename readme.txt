@@ -1,17 +1,17 @@
 === Show Support Ribbon ===
 
 Plugin Name: Show Support Ribbon
-Plugin URI: http://perishablepress.com/show-support-ribbon/
+Plugin URI: https://perishablepress.com/show-support-ribbon/
 Description: Displays a customizable "show support" ribbon, banner, or badge on your site.
 Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Donate link: http://m0n.co/donate
 Contributors: specialk
-Requires at least: 3.8
-Tested up to: 4.1
+Requires at least: 3.9
+Tested up to: 4.2
 Stable tag: trunk
-Version: 20150315
+Version: 20150507
 Text Domain: ssr
 Domain Path: /languages/
 License: GPL v2 or later
@@ -39,15 +39,22 @@ Show support for your favorite cause, event, charity, political event, or anythi
 
 Visit the "Show Support Ribbon" options page, choose your settings, save changes, done.
 
+[More info on installing WP plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
+
 == Upgrade Notice ==
 
 To upgrade, simply upload the new version and you should be good to go.
 
 == Screenshots ==
 
-Screenshots available at the [SSR Homepage](http://perishablepress.com/show-support-ribbon/).
+Screenshots available at the [SSR Homepage](https://perishablepress.com/show-support-ribbon/).
 
 == Changelog ==
+
+**20150507**
+
+* Tested with WP 4.2 + 4.3 (alpha)
+* Changed a few "http" links to "https"
 
 **20150315**
 
@@ -115,15 +122,15 @@ Answer: Images may be displayed using CSS. Upload the desired file and then disp
 
 Fine-tune as needed to dial it in. To add via plugin settings, select "Custom" for the "Select your style" option and include for either `<div>` or `<a>` styles.
 
-To ask a question, visit the [SSR Homepage](http://perishablepress.com/show-support-ribbon/) or [contact me](http://perishablepress.com/contact/).
+To ask a question, visit the [SSR Homepage](https://perishablepress.com/show-support-ribbon/) or [contact me](https://perishablepress.com/contact/).
 
 == Donations ==
 
 I created this plugin with love for the WP community. To show support, you can [make a donation](http://m0n.co/donate) or purchase one of my books: 
 
-* [The Tao of WordPress](http://wp-tao.com/)
-* [Digging into WordPress](http://digwp.com/)
-* [.htaccess made easy](http://htaccessbook.com/)
-* [WordPress Themes In Depth](http://wp-tao.com/wordpress-themes-book/)
+* [The Tao of WordPress](https://wp-tao.com/)
+* [Digging into WordPress](https://digwp.com/)
+* [.htaccess made easy](https://htaccessbook.com/)
+* [WordPress Themes In Depth](https://wp-tao.com/wordpress-themes-book/)
 
 Links, tweets and likes also appreciated. Thanks! :)

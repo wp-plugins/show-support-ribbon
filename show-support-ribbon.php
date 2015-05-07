@@ -1,17 +1,17 @@
 <?php 
 /*
 	Plugin Name: Show Support Ribbon
-	Plugin URI: http://perishablepress.com/show-support-ribbon/
+	Plugin URI: https://perishablepress.com/show-support-ribbon/
 	Description: Displays a customizable "show support" ribbon, banner, or badge on your site.
 	Tags: ribbon, banner, button, badge, link, custom, support, charity, politics, organization, event, rally, fundraiser
 	Author: Jeff Starr
 	Author URI: http://monzilla.biz/
 	Donate link: http://m0n.co/donate
 	Contributors: specialk
-	Requires at least: 3.8
-	Tested up to: 4.1
+	Requires at least: 3.9
+	Tested up to: 4.2
 	Stable tag: trunk
-	Version: 20150315
+	Version: 20150507
 	Text Domain: ssr
 	Domain Path: /languages/
 	License: GPL v2 or later
@@ -19,12 +19,12 @@
 
 if (!defined('ABSPATH')) die();
 
-$ssr_wp_vers = '3.8';
-$ssr_version = '20150315';
+$ssr_wp_vers = '3.9';
+$ssr_version = '20150507';
 $ssr_plugin  = __('Show Support Ribbon', 'ssr');
 $ssr_options = get_option('ssr_options');
 $ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
-$ssr_homeurl = 'http://perishablepress.com/show-support-ribbon/';
+$ssr_homeurl = 'https://perishablepress.com/show-support-ribbon/';
 
 function ssr_i18n_init() {
 	load_plugin_textdomain('ssr', false, dirname(plugin_basename(__FILE__)) . '/languages/');
@@ -490,7 +490,7 @@ box-shadow:1px 1px 3px 0 rgba(0,0,0,0.3);</pre>
 						<h3><?php _e('Updates &amp; Info', 'ssr'); ?></h3>
 						<div class="toggle">
 							<div id="mm-iframe-wrap">
-								<iframe src="http://perishablepress.com/current/index-ssr.html"></iframe>
+								<iframe src="https://perishablepress.com/current/index-ssr.html"></iframe>
 							</div>
 						</div>
 					</div>
