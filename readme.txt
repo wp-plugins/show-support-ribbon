@@ -8,10 +8,10 @@ Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Donate link: http://m0n.co/donate
 Contributors: specialk
-Requires at least: 3.9
-Tested up to: 4.2
+Requires at least: 4.0
+Tested up to: 4.3
 Stable tag: trunk
-Version: 20150507
+Version: 20150808
 Text Domain: ssr
 Domain Path: /languages/
 License: GPL v2 or later
@@ -50,6 +50,11 @@ To upgrade, simply upload the new version and you should be good to go.
 Screenshots available at the [SSR Homepage](https://perishablepress.com/show-support-ribbon/).
 
 == Changelog ==
+
+**20150808**
+
+* Tested on WordPress 4.3
+* Updated minimum version requirement
 
 **20150507**
 

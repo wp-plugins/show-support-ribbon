@@ -8,10 +8,10 @@
 	Author URI: http://monzilla.biz/
 	Donate link: http://m0n.co/donate
 	Contributors: specialk
-	Requires at least: 3.9
-	Tested up to: 4.2
+	Requires at least: 4.0
+	Tested up to: 4.3
 	Stable tag: trunk
-	Version: 20150507
+	Version: 20150808
 	Text Domain: ssr
 	Domain Path: /languages/
 	License: GPL v2 or later
@@ -19,8 +19,8 @@
 
 if (!defined('ABSPATH')) die();
 
-$ssr_wp_vers = '3.9';
-$ssr_version = '20150507';
+$ssr_wp_vers = '4.0';
+$ssr_version = '20150808';
 $ssr_plugin  = __('Show Support Ribbon', 'ssr');
 $ssr_options = get_option('ssr_options');
 $ssr_path    = plugin_basename(__FILE__); // 'show-support-ribbon/show-support-ribbon.php';
